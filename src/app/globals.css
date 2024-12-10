@@ -122,14 +122,14 @@ body {
 } */
 #services{
   position: relative;
-  background: url("/services_bg.png");
+  background: url("/services.png");
   background-size: contain;
   background-position: top;
   background-repeat: no-repeat;
 }
 #home {
   position: relative;
-  background: url("/mask_group.png");
+  background: url("/mask.png");
   background-size: cover; /* Or 'contain' depending on the desired behavior */
   background-position: center;
   background-repeat: no-repeat; /* Prevent tiling */

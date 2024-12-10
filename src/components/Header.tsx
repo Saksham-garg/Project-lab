@@ -90,7 +90,7 @@ const Header = () => {
                   transition={{ duration: 0.85, ease: "easeInOut" }}
                   className={`h-screen absolute top-0 bottom-0 bg-black -right-6 w-[45%]`}
                 >
-                  <div className="flex justify-end w-full">
+                  <div className="flex justify-end items-end p-5 px-6 w-full">
                     <RxCross2
                       className="w-6 h-6 md:hidden cursor-pointer"
                       onClick={() => setHamMenu(false)}

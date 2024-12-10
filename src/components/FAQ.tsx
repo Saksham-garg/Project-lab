@@ -9,9 +9,9 @@ const FAQ = () => {
 
   const Faqs = [
     {
-      question: "How can I contact Inkyy Team?",
+      question: "How can I contact Project LAB Team?",
       answer:
-        "You can reach us through our contact form on our website or by emailing us at hello@inkyy.com We typically respond within 24 hours.",
+        "You can reach us through our contact form on our website or by emailing us at projectlab@gmail.com We typically respond within 6 hours.",
     },
     {
       question: "What types of law do you cover?",

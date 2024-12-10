@@ -42,7 +42,6 @@ body {
 .app__footer-form {
   width: 100%;
   flex-direction: column;
-  margin: 1rem 2rem;
 }
 .app__footer-form div {
   width: 100%;

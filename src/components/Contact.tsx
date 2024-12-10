@@ -24,11 +24,23 @@ const Contact = () => {
     setLoading(true);
 
     const contact = {
-      _type: "contact",
       name: formData.name,
       email: formData.email,
       message: formData.message,
     };
+
+    fetch("http://localhost:3000/send-mail", {
+      method: "POST",
+      body: JSON.stringify(contact),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    })
+      .then(() => {
+        setLoading(false);
+        setIsFormSubmitted(true);
+      })
+      .catch((err) => console.log(err));
   };
   return (
     <section className="flex flex-col items-center justify-center py-8 px-3">
@@ -37,27 +49,27 @@ const Contact = () => {
       </h2>
 
       <div className="app__footer-cards max-w-md flex justify-evenly items-center flex-wrap mt-6">
-        <div className="app__footer-card min-w-72 flex justify-start items-center mx-4 p-4 border rounded-lg cursor-pointer transition ease-in-out w-full gap-3">
-          <Image
-            src={"/email.png"}
-            alt="email"
-            width={24}
-            height={20}
-            className="w-10 h-10 mx-0 my-2.5"
-          />
-          <a href="mailto:projectlab@gmail.com" className="p-text">
+        <a href="mailto:projectlab@gmail.com" className="p-text">
+          <div className="app__footer-card min-w-72 flex justify-start items-center sm:mx-4 sm:p-4 border rounded-lg cursor-pointer transition ease-in-out w-full gap-3 p-2">
+            <Image
+              src={"/email.png"}
+              alt="email"
+              width={24}
+              height={20}
+              className="w-10 h-10 mx-0 my-2.5"
+            />
             theprojecthead@gmail.com
-          </a>
-        </div>
+          </div>
+        </a>
       </div>
       {!isFormSubmitted ? (
-        <div className="app__footer-form app__flex w-full gap-5">
+        <div className="app__footer-form app__flex w-full gap-5 mx-4 my-12">
           <div className="app__flex w-full">
             <input
               className="bg-black w-full p-4 rounded-lg text-white border-[0.5px] border-gray-600"
               type="text"
               placeholder="Your Name"
-              name="username"
+              name="name"
               value={name}
               onChange={handleChangeInput}
             />
@@ -91,8 +103,13 @@ const Contact = () => {
           </button>
         </div>
       ) : (
-        <div>
-          <h3 className="head-text">Thank you for getting in touch!</h3>
+        <div className="h-full">
+          <h3 className="text-3xl sm:text-5xl font-raleway font-bold mt-16 text-center">
+            Thank you for getting in touch!
+          </h3>
+          <h3 className="text-3xl sm:text-5xl font-raleway font-bold mt-8 text-center">
+            Will get back to you soon...
+          </h3>
         </div>
       )}
     </section>

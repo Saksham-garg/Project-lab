@@ -107,7 +107,7 @@ body {
     transform: rotate(360deg);
   }
 }
-
+/* 
 #services::before {
   content: "";
   position: absolute;
@@ -119,10 +119,17 @@ body {
   background-position: top;
   background-repeat: no-repeat;
   background-size: 50%;
+} */
+#services{
+  position: relative;
+  background: url("/services_bg.png");
+  background-size: contain;
+  background-position: top;
+  background-repeat: no-repeat;
 }
 #home {
   position: relative;
-  background: url("/Mask_Group.png");
+  background: url("/mask_group.png");
   background-size: cover; /* Or 'contain' depending on the desired behavior */
   background-position: center;
   background-repeat: no-repeat; /* Prevent tiling */

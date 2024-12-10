@@ -6,9 +6,7 @@ import { FaBars } from "react-icons/fa";
 import { RxCross2 } from "react-icons/rx";
 import { motion, AnimatePresence } from "framer-motion";
 
-type Props = {};
-
-const Header = (props: Props) => {
+const Header = () => {
   const menuRef = useRef<HTMLDivElement | null>(null);
   const [hamMenu, setHamMenu] = useState<boolean>(false);
   useEffect(() => {

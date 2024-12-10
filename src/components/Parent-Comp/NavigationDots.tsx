@@ -3,7 +3,7 @@
 
 import React from "react";
 type Props = {
-  active: String;
+  active: string;
 };
 const NavigationDots = ({ active }: Props) => (
   <div className="xs:flex items-center justify-center hidden flex-col p-2 xs:relative absolute bottom-4 right-2 xs:right-0 xs:bottom-0">

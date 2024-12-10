@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { Raleway, Merriweather_Sans } from "@next/font/google";
+import { Raleway } from "@next/font/google";
 
 const raleway = Raleway({
   subsets: ["latin"],

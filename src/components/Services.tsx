@@ -2,13 +2,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { AppWrap, MotionWrap } from "@/wrapper";
-import ServicesCard from "./ServicesCard/ServicesCard";
 import { FaBalanceScale, FaTv } from "react-icons/fa";
 import FeatCard from "./Card/FeatCard";
 
-type Props = {};
 
-const Services = (props: Props) => {
+const Services = () => {
   const services = [
     {
       Icon: FaBalanceScale,

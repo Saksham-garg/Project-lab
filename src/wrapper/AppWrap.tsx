@@ -1,11 +1,9 @@
 import { NavigationDots, SocialMedia } from "../components/Parent-Comp";
 import { cn } from "@/lib/utils";
-import { gsap } from "gsap";
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 
 const AppWrap = (Component: React.FC, idName: string, classNames: string) =>
   function HOC() {
-    const backgroundRef = useRef<HTMLDivElement>(null);
     // useEffect(() => {
     //   // GSAP animation to rotate the background
     //   gsap.to(".rotating-background", {
@@ -18,7 +16,6 @@ const AppWrap = (Component: React.FC, idName: string, classNames: string) =>
     // }, []);
     return (
       <div
-        ref={backgroundRef}
         id={idName}
         className={cn(`w-full flex min-h-screen h-full`, classNames)}
       >

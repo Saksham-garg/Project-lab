@@ -1,10 +1,9 @@
 "use client";
 import { AppWrap, MotionWrap } from "@/wrapper";
+import Image from "next/image";
 import React, { useState } from "react";
 
-type Props = {};
-
-const Contact = (props: Props) => {
+const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -15,7 +14,7 @@ const Contact = (props: Props) => {
 
   const { name, email, message } = formData;
 
-  const handleChangeInput = (e) => {
+  const handleChangeInput = (e: any) => { // @typescript-eslint/no-explicit-any
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
@@ -38,7 +37,7 @@ const Contact = (props: Props) => {
 
       <div className="app__footer-cards max-w-md flex justify-evenly items-center flex-wrap mt-6">
         <div className="app__footer-card min-w-72 flex justify-start items-center mx-4 p-4 border rounded-lg cursor-pointer transition ease-in-out w-full gap-3">
-          <img
+          <Image
             src={"/email.png"}
             alt="email"
             className="w-10 h-10 mx-0 my-2.5"

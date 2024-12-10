@@ -2,11 +2,10 @@
 import React from "react";
 import { AppWrap, MotionWrap } from "@/wrapper";
 import { FaChartLine, FaGlobe, FaFileInvoiceDollar } from "react-icons/fa";
-import Card from "./Card/Card";
 import ServicesCard from "./ServicesCard/ServicesCard";
-type Props = {};
+import Image from "next/image";
 
-const WhyChooseUs = (props: Props) => {
+const WhyChooseUs = () => {
   const ourExpertise = [
     {
       Icon: FaChartLine,
@@ -44,18 +43,18 @@ const WhyChooseUs = (props: Props) => {
       </h2>
       <div className="p-3 border border-slate-800 rounded-lg">
         <div className="flex gap-3 items-center">
-          <img src={"/reviews.png"} className="xs:w-36 w-28" />
+          <Image alt="reviewers_img" src={"/reviews.png"} className="xs:w-36 w-28" />
           <div className="w-full">
             <p className="text-nowrap xs:text-sm text-xs">
               <span className="font-bold">5.0</span> Based on{" "}
               <span className="font-bold">145</span> Reviews
             </p>
             <div className="flex gap-1.5">
-              <img src={"/star.svg"} />
-              <img src={"/star.svg"} />
-              <img src={"/star.svg"} />
-              <img src={"/star.svg"} />
-              <img src={"/star.svg"} />
+              <Image alt="star" src={"/star.svg"} />
+              <Image alt="star" src={"/star.svg"} />
+              <Image alt="star" src={"/star.svg"} />
+              <Image alt="star" src={"/star.svg"} />
+              <Image alt="star" src={"/star.svg"} />
             </div>
           </div>
         </div>

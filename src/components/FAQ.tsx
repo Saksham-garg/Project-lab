@@ -1,23 +1,12 @@
 "use client";
-import { gsap } from "gsap";
-import React, { useEffect, useRef, useState } from "react";
-import { AppWrap, MotionWrap } from "@/wrapper";
-import AccordianCard from "./AccordianCard/AccordianCard";
-type Props = {};
 
-const FAQ = (props: Props) => {
+import React, { useState } from "react";
+import { AppWrap } from "@/wrapper";
+import AccordianCard from "./AccordianCard/AccordianCard";
+
+const FAQ = () => {
   const [activeAccordian, toggleAccordion] = useState<number>(-1);
-  const backgroundRef = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    if (backgroundRef.current) {
-      gsap.to(backgroundRef.current, {
-        rotation: 360, // Full rotation
-        duration: 10, // Duration in seconds
-        repeat: -1, // Infinite loop
-        ease: "linear", // Smooth, constant rotation
-      });
-    }
-  }, []);
+
   const Faqs = [
     {
       question: "How can I contact Inkyy Team?",
@@ -52,7 +41,7 @@ const FAQ = (props: Props) => {
               answer={faq.answer}
               question={faq.question}
               activeAccordian={activeAccordian}
-              toggleAccordion={toggleAccordion}
+              toggleAccordion={() => toggleAccordion}
               index={index}
               key={index}
             />

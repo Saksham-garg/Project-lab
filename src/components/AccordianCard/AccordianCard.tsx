@@ -8,7 +8,7 @@ type Props = {
   answer: string;
   activeAccordian: number;
   index: number;
-  toggleAccordion: Function;
+  toggleAccordion: (n: number) => {};
 };
 
 const AccordianCard = ({

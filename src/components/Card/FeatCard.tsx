@@ -8,6 +8,7 @@ type Props = {
     coreFeat: string[];
     otherFeat: string[];
   };
+  key: any;
 };
 
 const FeatCard = ({ service }: Props) => {

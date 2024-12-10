@@ -41,7 +41,7 @@ const FAQ = () => {
               answer={faq.answer}
               question={faq.question}
               activeAccordian={activeAccordian}
-              toggleAccordion={() => toggleAccordion}
+              toggleAccordion={() => toggleAccordion(activeAccordian == index ? -1 : index)}
               index={index}
               key={index}
             />

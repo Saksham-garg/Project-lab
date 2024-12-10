@@ -8,7 +8,7 @@ type Props = {
   answer: string;
   activeAccordian: number;
   index: number;
-  toggleAccordion: (n: number) => {};
+  toggleAccordion: () => void;
 };
 
 const AccordianCard = ({
@@ -31,7 +31,7 @@ const AccordianCard = ({
     <div>
       <div
         className="border-[1.5px] border-slate-800 rounded-xl accordian p-2.5 xs:p-4 max-w-xl cursor-pointer"
-        onClick={() => toggleAccordion(activeAccordian == index ? -1 : index)}
+        onClick={toggleAccordion}
       >
         <button className="w-full flex justify-between items-center text-slate-800">
           <span className="text-white font-semibold">{question}</span>

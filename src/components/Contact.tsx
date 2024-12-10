@@ -32,7 +32,7 @@ const Contact = () => {
   };
   return (
     <section className="flex flex-col items-center justify-center py-8 px-3">
-      <h2 className="head-text text-xl xs:text-2xl sm:text-3xl md:text-4xl">
+      <h2 className="text-xl xs:text-2xl sm:text-3xl font-semibold md:text-4xl">
         Take a coffee & chat with me
       </h2>
 

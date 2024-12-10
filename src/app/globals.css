@@ -19,3 +19,177 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+.head-text {
+  font-size: 2.75rem;
+  font-weight: 800;
+  text-align: center;
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.app__flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app__footer-form {
+  width: 100%;
+  flex-direction: column;
+  margin: 1rem 2rem;
+}
+.app__footer-form div {
+  width: 100%;
+
+  border-radius: 10px;
+  cursor: pointer;
+
+  transition: all 0.3s ease-in-out;
+}
+
+.app__footer-form div textarea {
+  height: 170px;
+}
+
+.app__footer-cards .app__footer-card:last-child:hover {
+  box-shadow: 0 0 25px #f2f7fb;
+}
+.example-2 {
+  background: #1c1c1c;
+  /* Group 27134 */
+
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+  background: linear-gradient(121.9deg, #1c1c1c 0%, #050505 96.81%);
+  mix-blend-mode: plus-lighter;
+  border: 1px solid #2b2b2b;
+  border-radius: 10px;
+
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 120%;
+}
+.example-2::before {
+  content: "";
+  display: block;
+  background: linear-gradient(
+    172deg,
+    rgba(243, 244, 246, 1) 0%,
+    rgba(49, 59, 172, 1) 69%,
+    rgba(17, 142, 233, 1) 70%,
+    rgba(12, 140, 233, 1) 90%,
+    rgba(219, 233, 245, 1) 91%
+  );
+  height: 300px;
+  width: 100px;
+  transform: translate(0);
+  position: absolute;
+  animation: rotate 5s linear forwards infinite;
+  z-index: 0;
+  top: 50%;
+  transform-origin: top center;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#services::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  background: url("/Services_bg.png");
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: 50%;
+}
+#home {
+  position: relative;
+  background: url("/Mask_Group.png");
+  background-size: cover; /* Or 'contain' depending on the desired behavior */
+  background-position: center;
+  background-repeat: no-repeat; /* Prevent tiling */
+}
+#faq {
+  position: relative;
+  background: url("/faq_bg.png");
+  background-size: contain; /* Or 'contain' depending on the desired behavior */
+  background-position: left;
+  background-repeat: no-repeat; /* Prevent tiling */
+}
+#why-choose-us{
+  position: relative;
+  background: url("/whychooseus_bg.png");
+  background-size: cover;
+  background-position: left;
+  background-repeat: no-repeat;
+}
+
+/* #why-choose-us::before {
+  content: "";
+  position: absolute;
+  top: 30%;
+  right: 3%;
+  width: 50%;
+  height: 50%;
+  z-index: -10;
+  background: url("/whychooseus_bg.png");
+  background-size: cover; 
+  background-position: left;
+  background-repeat: no-repeat;
+  transform: rotate(190deg);
+  overflow: hidden;
+} */
+.contact-parent {
+  position: relative;
+  background: url("/Contact_bg.png");
+  background-size: cover; /* Or 'contain' depending on the desired behavior */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.accordian {
+  background: linear-gradient(121.9deg, #1c1c1c 0%, #050505 96.81%);
+  mix-blend-mode: plus-lighter;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.servicesCard {
+  /* Group 27175 */
+
+  background: linear-gradient(121.9deg, #1c1c1c 0%, #050505 96.81%);
+  border: 1px solid #2b2b2b;
+  border-radius: 10px;
+}
+
+.background-container {
+  position: relative;
+  width: 100vw; /* Full viewport width */ /* Full viewport height */
+  /* Prevent overflow from rotation */
+}
+
+.rotating-background {
+  position: absolute;
+  top: 30%; /* Center vertically */
+  left: 25%; /* Center horizontally */
+  width: 50%; /* Double size for rotation effect */
+  height: 50%;
+  background-size: cover;
+  background-position: center;
+  transform-origin: center; /* Set origin for rotation */
+}

@@ -14,7 +14,8 @@ const Contact = () => {
 
   const { name, email, message } = formData;
 
-  const handleChangeInput = (e: any) => { // @typescript-eslint/no-explicit-any
+  const handleChangeInput = (e: any) => {
+    // @typescript-eslint/no-explicit-any
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
@@ -40,6 +41,8 @@ const Contact = () => {
           <Image
             src={"/email.png"}
             alt="email"
+            width={24}
+            height={20}
             className="w-10 h-10 mx-0 my-2.5"
           />
           <a href="mailto:projectlab@gmail.com" className="p-text">

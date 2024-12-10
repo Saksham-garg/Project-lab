@@ -43,18 +43,18 @@ const WhyChooseUs = () => {
       </h2>
       <div className="p-3 border border-slate-800 rounded-lg">
         <div className="flex gap-3 items-center">
-          <Image alt="reviewers_img" src={"/reviews.png"} className="xs:w-36 w-28" />
+          <Image alt="reviewers_img" src={"/reviews.png"} width={144} height={20} className="xs:w-36 w-28" />
           <div className="w-full">
             <p className="text-nowrap xs:text-sm text-xs">
               <span className="font-bold">5.0</span> Based on{" "}
               <span className="font-bold">145</span> Reviews
             </p>
             <div className="flex gap-1.5">
-              <Image alt="star" src={"/star.svg"} />
-              <Image alt="star" src={"/star.svg"} />
-              <Image alt="star" src={"/star.svg"} />
-              <Image alt="star" src={"/star.svg"} />
-              <Image alt="star" src={"/star.svg"} />
+              <Image alt="star" src={"/star.svg"} width={24} height={20} />
+              <Image alt="star" src={"/star.svg"} width={24} height={20}/>
+              <Image alt="star" src={"/star.svg"} width={24} height={20}/>
+              <Image alt="star" src={"/star.svg"} width={24} height={20}/>
+              <Image alt="star" src={"/star.svg"} width={24} height={20}/>
             </div>
           </div>
         </div>

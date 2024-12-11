@@ -30,55 +30,45 @@ export async function POST(req: NextRequest, res: NextResponse) {
         pass: "dkzazqvktjbalufz",
       },
     });
-    await new Promise((resolve, reject) => {
-      transporter.sendMail(mailOptions, async (err, data) => {
-        console.log(err);
-        console.log(data);
-        if (err) {
-          return NextResponse.json(
-            {
-              message: "fail",
-            },
-            {
-              status: 400,
+    transporter.sendMail(mailOptions, async (err, data) => {
+      console.log(err);
+      console.log(data);
+      if (err) {
+        return NextResponse.json(
+          {
+            message: "fail",
+          },
+          {
+            status: 400,
+          }
+        );
+      } else {
+        //If Success, send Auto Reply email
+        transporter.sendMail(
+          {
+            from: "theprojecthead@gmail.com",
+            to: email,
+            subject: "Message received",
+            text: `Hi ${name}!,\nThank you for sending me a message. I will get back to you soon.\n\nBest Regards,\n${creds.YOURNAME}\n${creds.YOURSITE}\n\n\nMessage Details\nName: ${name}\n Email: ${email}\n Message: ${message}`,
+            html: `<p>Hi ${name},<br>Thank you for sending me a message. I will get back to you soon.<br><br>Best Regards,<br>${creds.YOURNAME}<br>${creds.YOURSITE}<br><br><br>Message Details<br>Name: ${name}<br> Email: ${email}<br> Message: ${message}</p>`,
+          },
+          function (error, info) {
+            if (error) {
+              console.log(error);
+            } else {
+              console.log("Message sent: " + info.response);
             }
-          );
-        } else {
-          //If Success, send Auto Reply email
-          await new Promise((resolve, reject) => {
-            transporter.sendMail(
-              {
-                from: "theprojecthead@gmail.com",
-                to: email,
-                subject: "Message received",
-                text: `Hi ${name}!,\nThank you for sending me a message. I will get back to you soon.\n\nBest Regards,\n${creds.YOURNAME}\n${creds.YOURSITE}\n\n\nMessage Details\nName: ${name}\n Email: ${email}\n Message: ${message}`,
-                html: `<p>Hi ${name},<br>Thank you for sending me a message. I will get back to you soon.<br><br>Best Regards,<br>${creds.YOURNAME}<br>${creds.YOURSITE}<br><br><br>Message Details<br>Name: ${name}<br> Email: ${email}<br> Message: ${message}</p>`,
-              },
-              function (error, info) {
-                if (error) {
-                  console.log(error);
-                } else {
-                  console.log("Message sent: " + info.response);
-                }
-              }
-            );
-          });
+          }
+        );
 
-          return NextResponse.json(
-            {
-              message: "success",
-            },
-            { status: 200 }
-          );
-        }
-      });
+        return NextResponse.json(
+          {
+            message: "success",
+          },
+          { status: 200 }
+        );
+      }
     });
-    return NextResponse.json(
-      {
-        message: "success",
-      },
-      { status: 200 }
-    );
   } catch (error) {
     return NextResponse.json({ error: error }, { status: 500 });
   }

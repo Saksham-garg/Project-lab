@@ -13,7 +13,7 @@ type Props = {
 
 const FeatCard = ({ service }: Props) => {
   return (
-    <div className="card w-80 h-auto bg-[#07182E] rounded-2xl overflow-hidden relative transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,183,255,0.5)]">
+    <div className="card w-80 xs:w-96 h-auto bg-[#07182E] rounded-2xl overflow-hidden relative transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,183,255,0.5)]">
       <div className="card-content p-4 relative z-10">
         <div className="flex items-center mb-4">
           <div className="w-12 h-12 rounded-xl shadow-lg mr-3 border-2 border-white/20 bg-blue-500 flex items-center justify-center text-white font-bold text-[0.6rem] leading-tight">
@@ -79,7 +79,7 @@ const FeatCard = ({ service }: Props) => {
             })}
           </ul>
         </div>
-        <div className="flex justify-between items-center space-x-2">
+        {/* <div className="flex justify-between items-center space-x-2">
           <button className="flex-1 bg-white/10 text-white/90 rounded-lg px-3 py-2 text-xs font-medium transition duration-300 ease-in-out hover:bg-white/20 flex items-center justify-center border border-white/20">
             <svg
               stroke="currentColor"
@@ -114,7 +114,7 @@ const FeatCard = ({ service }: Props) => {
             </svg>
             Download
           </button>
-        </div>
+        </div> */}
       </div>
     </div>
   );

@@ -22,7 +22,7 @@ const ServicesCard = ({ service }: Props) => {
           <h1 className="text-2xl font-raleway font-semibold">
             {service?.name}
           </h1>
-          <div className="flex flex-col gap-3 w-full text-sm">
+          <div className="flex flex-col gap-3 w-full text-sm font-raleway font-normal">
             {service?.description}
           </div>
         </div>

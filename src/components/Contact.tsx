@@ -95,8 +95,7 @@ const Contact = () => {
           </div>
 
           <button
-            type="button"
-            className="p-text py-4 px-8 rounded-lg font-medium outline-none bg-[#313bac] hover:bg-[#2430af] transition-all cursor-pointer mt-8 text-white"
+            className="py-4 px-8 rounded-lg font-medium outline-none bg-[#313bac] transition-all cursor-pointer mt-8 text-white"
             onClick={handleSubmit}
           >
             {!loading ? "Send Message" : "Sending..."}

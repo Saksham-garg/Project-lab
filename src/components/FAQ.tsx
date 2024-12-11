@@ -56,7 +56,7 @@ const FAQ = () => {
         "The turnaround time varies depending on the complexity and size of the project. However, we always strive to meet deadlines and will provide you with an estimated completion date upon receiving your project details.",
     },
   ];
-  
+
   return (
     <section className="flex w-full flex-col md:flex-row items-center justify-evenly md:justify-between py-8 gap-10 h-full px-3">
       <h2 className="md:flex-1 font-raleway text-xl xs:text-2xl sm:text-3xl md:text-4xl font-bold text-white text-start text-wrap">
@@ -69,7 +69,9 @@ const FAQ = () => {
               answer={faq.answer}
               question={faq.question}
               activeAccordian={activeAccordian}
-              toggleAccordion={() => toggleAccordion(activeAccordian == index ? -1 : index)}
+              toggleAccordion={() =>
+                toggleAccordion(activeAccordian === index ? -1 : index)
+              }
               index={index}
               key={index}
             />

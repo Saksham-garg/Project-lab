@@ -13,7 +13,9 @@
     --foreground: #ededed;
   }
 }
-
+.ToolbarWrapper-sc-cif21b-6{
+  display: none !important;
+}
 body {
   color: var(--foreground);
   background: var(--background);

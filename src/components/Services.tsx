@@ -188,5 +188,5 @@ const Services = () => {
 export default AppWrap(
   MotionWrap(Services, "services w-full h-full"),
   "services",
-  "bg-[#0a0a0a] min-h-screen"
+  "bg-[#0a0a0a] min-h-screen",
 );

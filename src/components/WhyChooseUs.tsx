@@ -1,7 +1,12 @@
 "use client";
 import React from "react";
 import { AppWrap, MotionWrap } from "@/wrapper";
-import { FaChartLine, FaGlobe, FaFileInvoiceDollar, FaUsersCog, FaCheckCircle, FaCogs, FaDollarSign } from "react-icons/fa";
+import {
+  FaUsersCog,
+  FaCheckCircle,
+  FaCogs,
+  FaDollarSign,
+} from "react-icons/fa";
 import ServicesCard from "./ServicesCard/ServicesCard";
 import Image from "next/image";
 
@@ -78,5 +83,5 @@ const WhyChooseUs = () => {
 export default AppWrap(
   MotionWrap(WhyChooseUs, "why-choose-us"),
   "why-choose-us",
-  "app__whitebg min-h-screen"
+  "app__whitebg min-h-screen",
 );

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import React from "react";
 import { Raleway } from "@next/font/google";
 import Head from "next/head";
 

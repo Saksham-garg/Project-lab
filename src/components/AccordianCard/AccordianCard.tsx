@@ -39,7 +39,7 @@ const AccordianCard = ({
             id={`icon-${index}`}
             className="text-slate-800 transition-transform duration-300"
           >
-            {activeAccordian == index ? <MinusIcon /> : <PlusIcon />}
+            {activeAccordian === index ? <MinusIcon /> : <PlusIcon />}
           </span>
         </button>
         <div

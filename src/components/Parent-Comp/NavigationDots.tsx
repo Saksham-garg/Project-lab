@@ -1,6 +1,3 @@
-/* eslint-disable jsx-a11y/control-has-associated-label */
-/* eslint-disable jsx-a11y/anchor-has-content */
-
 import React from "react";
 type Props = {
   active: string;
@@ -15,7 +12,7 @@ const NavigationDots = ({ active }: Props) => (
           className="w-2.5 h-2.5 rounded-full bg-[#cbcbcb] m-[0.5rem] transition ease-in-out hover:bg-[#313bac]"
           style={active === item ? { backgroundColor: "#313BAC" } : {}}
         />
-      )
+      ),
     )}
   </div>
 );

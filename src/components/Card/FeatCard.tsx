@@ -42,7 +42,10 @@ const FeatCard = ({ service }: Props) => {
           <div className="flex flex-wrap -mx-1">
             {service?.coreFeat.map((feat) => {
               return (
-                <div className="px-2 py-1 m-0.5 bg-white/10 rounded-full text-xs font-medium text-white/70 shadow-sm border border-white/20 transition-all duration-300 hover:bg-white/20">
+                <div
+                  className="px-2 py-1 m-0.5 bg-white/10 rounded-full text-xs font-medium text-white/70 shadow-sm border border-white/20 transition-all duration-300 hover:bg-white/20"
+                  key={feat}
+                >
                   {feat}
                 </div>
               );
@@ -56,7 +59,7 @@ const FeatCard = ({ service }: Props) => {
           <ul className="text-xs text-white/60 grid grid-cols-1 gap-1">
             {service?.otherFeat.map((feat) => {
               return (
-                <li className="flex items-center">
+                <li className="flex items-center" key={feat}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"

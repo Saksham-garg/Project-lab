@@ -119,5 +119,5 @@ const Contact = () => {
 export default AppWrap(
   MotionWrap(Contact, "contact"),
   "contact",
-  "app__whitebg min-h-screen relative bg-no-repeat bg-center contact-parent"
+  "app__whitebg min-h-screen relative bg-no-repeat bg-center contact-parent",
 );

@@ -8,8 +8,22 @@ import {
   BeautifulTimeline as Timeline,
   BeautifulTimelineItem as TimelineItem,
 } from "react-beautiful-timeline";
+import "react-beautiful-timeline/dist/style.css";
 
 const Hero = () => {
+  // const items = [{
+  //   title: "Connect With Us",
+  //   cardTitle: "Dunkirk",
+  //   url: "/talk.png",
+  //   cardSubtitle:"Men of the British Expeditionary Force (BEF) wade out to..",
+  //   cardDetailedText: "Schedule a consultation or contact us directly to discuss your needs.",
+  //   media: {
+  //     type: "IMAGE",
+  //     source: {
+  //       url: "/talk.png"
+  //     }
+  //   }
+  // }];
   return (
     <MaxWidthWrapper className="flex flex-col items-center justify-center gap-6 md:gap-10 text-center h-full z-10">
       <h1 className="max-w-4xl md:mb-4 font-bold text-5xl md:text-6xl lg:text-7xl font-raleway">
@@ -19,7 +33,7 @@ const Hero = () => {
         Unlock your academic potential with expert assistance. We're your secret
         weapon for achieving top grades and impressing your professors.
       </p>
-      <div className="text-center my-4 p-1">
+      {typeof window !== "undefined" && (
         <Timeline
           type={"horizontal"}
           animation={true}
@@ -43,7 +57,9 @@ const Hero = () => {
             dotColor="none"
           >
             <div className="timelineItem bg-white p-1 xs:p-2 rounded-lg text-black mt-4">
-              <h3 className="font-semibold font-raleway xs:text-base text-sm">Connect With Us</h3>
+              <h3 className="font-semibold font-raleway xs:text-base text-sm">
+                Connect With Us
+              </h3>
               <p className="hidden xs:block text-xs">
                 Schedule a consultation or contact us directly to discuss your
                 needs.
@@ -62,8 +78,10 @@ const Hero = () => {
             dotIcon={<img src={"/pricing.png"} alt="dotIcon" />}
             place="opposite"
           >
-              <div className="timelineItem bg-white p-1 xs:p-2 rounded-lg text-black mb-4">
-              <h3 className="font-semibold font-raleway xs:text-base text-sm">Request a Quote</h3>
+            <div className="timelineItem bg-white p-1 xs:p-2 rounded-lg text-black mb-4">
+              <h3 className="font-semibold font-raleway xs:text-base text-sm">
+                Request a Quote
+              </h3>
               <p className="hidden xs:block text-xs">
                 We’ll provide an affordable quote based on your project
                 specifications and get started promptly.
@@ -79,8 +97,10 @@ const Hero = () => {
               background: "none",
             }}
           >
-               <div className="timelineItem bg-white p-1 xs:p-2 rounded-lg text-black mt-4">
-              <h3 className="font-semibold font-raleway xs:text-base text-sm">Relax and Enjoy</h3>
+            <div className="timelineItem bg-white p-1 xs:p-2 rounded-lg text-black mt-4">
+              <h3 className="font-semibold font-raleway xs:text-base text-sm">
+                Relax and Enjoy
+              </h3>
               <p className="hidden xs:block text-xs">
                 Your work is done! We’ll keep you updated on the project’s
                 progress.
@@ -98,15 +118,19 @@ const Hero = () => {
             dotColor="none"
             place="opposite"
           >
-               <div className="timelineItem bg-white p-1 xs:p-2 rounded-lg text-black mb-4">
-              <h3 className="font-semibold font-raleway xs:text-base text-sm"> Receive Your Project</h3>
+            <div className="timelineItem bg-white p-1 xs:p-2 rounded-lg text-black mb-4">
+              <h3 className="font-semibold font-raleway xs:text-base text-sm">
+                {" "}
+                Receive Your Project
+              </h3>
               <p className="hidden xs:block text-xs">
                 Get your completed project, crafted with care and precision.
               </p>
             </div>
           </TimelineItem>
         </Timeline>
-      </div>
+      )}
+
       <div className="flex gap-4">
         <Link href="#services">
           <Button name="Explore Services" />

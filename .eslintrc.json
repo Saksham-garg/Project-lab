@@ -35,6 +35,8 @@
       "no-console": 1,
       "no-unused-vars": "warn",
       "no-dupe-else-if": 0,
-      "no-import-assign": "warn"
+      "no-import-assign": "warn",
+      "react/no-unescaped-entities": "off",
+
   }
 }

@@ -26,7 +26,7 @@ const Header = () => {
   }, [setHamMenu]);
 
   return (
-    <header className="w-full flex justify-between fixed top-0 z-50 bg-[#00000024] z-50">
+    <header className="w-full flex justify-between fixed top-0 bg-[#00000024] z-50">
       <nav className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 w-full border-0 border-white">
         <div className="relative flex items-center justify-between h-16 w-full">
           <Link href={"/"}>

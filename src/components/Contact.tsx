@@ -29,7 +29,7 @@ const Contact = () => {
       message: formData.message,
     };
 
-    fetch("http://localhost:3000/send-mail", {
+    fetch("http://sakshamgarg.tech:3000/send-mail", {
       method: "POST",
       body: JSON.stringify(contact),
       headers: {

@@ -1,5 +1,6 @@
 import React from "react";
 import { IconType } from "react-icons";
+import { motion } from "framer-motion";
 
 type Props = {
   service: {
@@ -13,7 +14,11 @@ type Props = {
 
 const FeatCard = ({ service }: Props) => {
   return (
-    <div className="card w-80 xs:w-96 h-auto bg-[#07182E] rounded-2xl overflow-hidden relative transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,183,255,0.5)]">
+    <motion.div
+      whileHover={{ scale: 1.05 }}
+      transition={{ duration: 0 }}
+      className="card w-80 xs:w-96 h-auto bg-[#07182E] rounded-2xl overflow-hidden relative transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,183,255,0.5)]"
+    >
       <div className="card-content p-4 relative z-10">
         <div className="flex items-center mb-4">
           <div className="w-12 h-12 rounded-xl shadow-lg mr-3 border-2 border-white/20 bg-blue-500 flex items-center justify-center text-white font-bold text-[0.6rem] leading-tight">
@@ -119,7 +124,7 @@ const FeatCard = ({ service }: Props) => {
           </button>
         </div> */}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

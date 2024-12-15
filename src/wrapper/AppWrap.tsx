@@ -4,16 +4,6 @@ import React from "react";
 
 const AppWrap = (Component: React.FC, idName: string, classNames: string) =>
   function HOC() {
-    // useEffect(() => {
-    //   // GSAP animation to rotate the background
-    //   gsap.to(".rotating-background", {
-    //     rotation: 360,
-    //     duration: 30,
-    //     ease: "none",
-    //     repeat: -1,
-    //     transformOrigin: "50% 50%", // Ensure rotation around the center
-    //   });
-    // }, []);
     return (
       <div
         id={idName}

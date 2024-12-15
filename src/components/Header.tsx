@@ -5,6 +5,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { FaBars } from "react-icons/fa";
 import { RxCross2 } from "react-icons/rx";
 import { motion, AnimatePresence } from "framer-motion";
+import toast from "react-hot-toast";
 
 const Header = () => {
   const menuRef = useRef<HTMLDivElement | null>(null);
@@ -76,6 +77,41 @@ const Header = () => {
                 </Link>
               </div>
             </div>
+            <motion.div
+              whileHover={{ scale: 1.2 }} // Scale up on hover
+              transition={{ duration: 0.3 }}
+              onClick={() => {
+                navigator.clipboard.writeText("+919350043796");
+                toast("Contact Copied!", {
+                  icon: "👏",
+                  style: {
+                    borderRadius: "10px",
+                    background: "#333",
+                    color: "#fff",
+                  },
+                });
+              }}
+              className="mx-3 flex items-center gap-3" // Hide overflow
+            >
+              <Image
+                src={"/whatsappIcon.svg"}
+                alt="whatsapp"
+                width={38}
+                height={38}
+                className="mx-0 my-2.5 mix-blend-overlay"
+              />
+
+              {/* Inner motion.div */}
+              <motion.div
+                initial={{ width: 0 }} // Hidden initially
+                whileHover={{ width: "100%" }} // Expand horizontally on hover
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                className="text-black font-semibold bg-white h-full overflow-hidden whitespace-nowrap" // Style and hide overflow
+              >
+                93500-43796
+              </motion.div>
+            </motion.div>
+
             <FaBars
               className="w-6 h-6 md:hidden cursor-pointer"
               onClick={() => setHamMenu(true)}

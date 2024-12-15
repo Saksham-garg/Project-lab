@@ -4,6 +4,7 @@ import "./globals.css";
 import React from "react";
 import { Raleway } from "@next/font/google";
 import Head from "next/head";
+import { Toaster } from "react-hot-toast";
 
 const raleway = Raleway({
   subsets: ["latin"],
@@ -34,6 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Toaster position="top-center" reverseOrder={false} />
       <Head>
         <link rel="icon" href="/favicon.png" />
       </Head>

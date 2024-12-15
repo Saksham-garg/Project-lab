@@ -9,21 +9,9 @@ import {
   BeautifulTimelineItem as TimelineItem,
 } from "react-beautiful-timeline";
 import "react-beautiful-timeline/dist/style.css";
+import Image from "next/image";
 
 const Hero = () => {
-  // const items = [{
-  //   title: "Connect With Us",
-  //   cardTitle: "Dunkirk",
-  //   url: "/talk.png",
-  //   cardSubtitle:"Men of the British Expeditionary Force (BEF) wade out to..",
-  //   cardDetailedText: "Schedule a consultation or contact us directly to discuss your needs.",
-  //   media: {
-  //     type: "IMAGE",
-  //     source: {
-  //       url: "/talk.png"
-  //     }
-  //   }
-  // }];
   return (
     <MaxWidthWrapper className="flex flex-col items-center justify-center gap-6 md:gap-10 text-center h-full z-10">
       <h1 className="max-w-4xl md:mb-4 font-bold text-5xl md:text-6xl lg:text-7xl font-raleway">

@@ -3,6 +3,7 @@ import cors from "cors";
 import express from "express";
 import creds from "../../../config";
 import { NextRequest, NextResponse } from "next/server";
+import { CompiledAutoReplyTemplate } from "./CompiledAutoReplyTemplate";
 var router = express.Router();
 
 const app = express();
@@ -16,7 +17,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
     const mailOptions = {
       from: email,
       to: "theprojecthead@gmail.com",
-      subject: name,
+      subject: `New Inquiry from ${name}`,
       text: message,
     };
 
@@ -30,57 +31,77 @@ export async function POST(req: NextRequest, res: NextResponse) {
         pass: "dkzazqvktjbalufz",
       },
     });
-    await new Promise((resolve, reject) => {
-      transporter.sendMail(mailOptions, async (err, data) => {
-        console.log(err);
-        console.log(data);
-        if (err) {
-          return NextResponse.json(
-            {
-              message: "fail",
-            },
-            {
-              status: 400,
-            }
-          );
-        } else {
-          //If Success, send Auto Reply email
-          await new Promise((resolve, reject) => {
-            transporter.sendMail(
-              {
-                from: "theprojecthead@gmail.com",
-                to: email,
-                subject: "Message received",
-                text: `Hi ${name}!,\nThank you for sending me a message. I will get back to you soon.\n\nBest Regards,\n${creds.YOURNAME}\n${creds.YOURSITE}\n\n\nMessage Details\nName: ${name}\n Email: ${email}\n Message: ${message}`,
-                html: `<p>Hi ${name},<br>Thank you for sending me a message. I will get back to you soon.<br><br>Best Regards,<br>${creds.YOURNAME}<br>${creds.YOURSITE}<br><br><br>Message Details<br>Name: ${name}<br> Email: ${email}<br> Message: ${message}</p>`,
-              },
-              function (error, info) {
-                if (error) {
-                  console.log(error);
-                } else {
-                  console.log("Message sent: " + info.response);
-                }
-              }
-            );
-          });
+    // await new Promise((resolve, reject) => {
+    //   transporter.sendMail(mailOptions, async (err, data) => {
+    //     console.log(err);
+    //     console.log(data);
+    //     if (err) {
+    //       return NextResponse.json(
+    //         {
+    //           message: "fail",
+    //         },
+    //         {
+    //           status: 400,
+    //         }
+    //       );
+    //     } else {
+    //       //If Success, send Auto Reply email
+    //       await new Promise((resolve, reject) => {
+    //         transporter.sendMail(
+    //           {
+    //             from: "theprojecthead@gmail.com",
+    //             to: email,
+    //             subject: "Message Received - Thank You!",
+    //             html: CompiledAutoReplyTemplate(name),
+    //           },
+    //           function (error, info) {
+    //             if (error) {
+    //               console.log(error);
+    //             } else {
+    //               console.log("Message sent: " + info.response);
+    //               return NextResponse.json(
+    //                 {
+    //                   message: "success",
+    //                 },
+    //                 { status: 200 }
+    //               );
+    //             }
+    //           }
+    //         );
+    //       });
 
-          return NextResponse.json(
-            {
-              message: "success",
-            },
-            { status: 200 }
-          );
-        }
-      });
-    });
+    //       return NextResponse.json(
+    //         {
+    //           message: "success",
+    //         },
+    //         { status: 200 }
+    //       );
+    //     }
+    //   });
+    // });
+    await transporter.sendMail(mailOptions);
+
+    // Prepare the auto-reply email
+    const autoReplyMailOptions = {
+      from: "theprojecthead@gmail.com",
+      to: email,
+      subject: "Message Received - Thank You!",
+      html: CompiledAutoReplyTemplate(name), // Ensure this function returns valid HTML
+    };
+
+    // Send the auto-reply email
+    await transporter.sendMail(autoReplyMailOptions);
+
+    // Return a successful response
     return NextResponse.json(
-      {
-        message: "success",
-      },
+      { message: "Emails sent successfully!" },
       { status: 200 }
     );
   } catch (error) {
-    return NextResponse.json({ error: error }, { status: 500 });
+    return NextResponse.json(
+      { message: "Failed to send emails.", error: error },
+      { status: 500 }
+    );
   }
 
   //Deliver message from your portfolio to your email address

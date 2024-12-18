@@ -7,12 +7,10 @@ import {
   Contact,
   FAQ,
 } from "@/components";
-import AutoReply from "@/components/Email/AutoReply";
 
 export default function Home() {
   return (
     <>
-      <AutoReply />
       <Header />
       <Hero />
       <Services />
